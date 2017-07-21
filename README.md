@@ -7,7 +7,6 @@ Golang CAN-bus interface with support for Linux SocketCAN backend
 [![Godoc][Godoc-Image]][Godoc-Url]
 [![ReportCard][ReportCard-Image]][ReportCard-Url]
 [![Build][Build-Status-Image]][Build-Status-Url]
-[![BuildAppVeyor][BuildAV-Status-Image]][BuildAV-Status-Url]
 
 # Other languages
 
