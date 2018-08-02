@@ -7,7 +7,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/sitec-systems/can/socketcan"
+	"github.com/sitec-systems/gocan/socketcan"
 )
 
 func main() {

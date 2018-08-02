@@ -9,7 +9,7 @@ package socketcan
 import (
 	"testing"
 
-	"github.com/sitec-systems/can/canio"
+	"github.com/sitec-systems/gocan/canio"
 	"github.com/stretchr/testify/assert"
 )
 

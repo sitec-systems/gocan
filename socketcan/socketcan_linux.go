@@ -13,7 +13,7 @@ import (
 	"strings"
 	"unsafe"
 
-	"github.com/sitec-systems/can/canio"
+	"github.com/sitec-systems/gocan/canio"
 	"golang.org/x/sys/unix"
 )
 
