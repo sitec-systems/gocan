@@ -2,17 +2,7 @@
 
 Golang CAN-bus interface with support for Linux SocketCAN backend
 
-[![License][License-Image]][License-Url]
-![Stability][Stability-Status-Image]
-[![Godoc][Godoc-Image]][Godoc-Url]
-[![ReportCard][ReportCard-Image]][ReportCard-Url]
-[![Build][Build-Status-Image]][Build-Status-Url]
-
-# Other languages
-
-* [Rust (github.com/mbr/socketcan-rs](https://github.com/mbr/socketcan-rs)
-* [Node.js (github.com/jjkr/rawcan)](https://github.com/jjkr/rawcan)
-* [Haskell (github.com/muhbaasu/socketcan)](https://github.com/muhbaasu/socketcan)
+This is a fork of the project github.com/xor-gate/can.
 
 # License
 
