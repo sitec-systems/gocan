@@ -6,7 +6,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/xor-gate/can/socketcan"
+
+	"github.com/sitec-systems/can/socketcan"
 )
 
 func main() {

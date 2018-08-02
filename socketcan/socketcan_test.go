@@ -8,8 +8,9 @@ package socketcan
 
 import (
 	"testing"
+
+	"github.com/sitec-systems/can/canio"
 	"github.com/stretchr/testify/assert"
-	"github.com/xor-gate/can/canio"
 )
 
 func TestNew(t *testing.T) {

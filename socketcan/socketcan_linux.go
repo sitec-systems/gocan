@@ -5,15 +5,16 @@
 package socketcan
 
 import (
-	"net"
-	"fmt"
 	"bytes"
-	"errors"
-	"unsafe"
-	"strings"
 	"encoding/binary"
+	"errors"
+	"fmt"
+	"net"
+	"strings"
+	"unsafe"
+
+	"github.com/sitec-systems/can/canio"
 	"golang.org/x/sys/unix"
-	"github.com/xor-gate/can/canio"
 )
 
 const (
@@ -23,14 +24,14 @@ const (
 
 type SocketCAN struct {
 	ifname string
-	fd int
+	fd     int
 }
 
 type msg struct {
-	id uint32 // 32 bit CAN_ID + EFF/RTR/ERR flags
-	dlc uint8 // frame payload length in byte (0 .. CAN_MAX_DLEN)
-	_ [3] byte // padding
-	data [8] byte // data
+	id   uint32  // 32 bit CAN_ID + EFF/RTR/ERR flags
+	dlc  uint8   // frame payload length in byte (0 .. CAN_MAX_DLEN)
+	_    [3]byte // padding
+	data [8]byte // data
 }
 
 type ifreqIndex struct {
@@ -149,13 +150,13 @@ func (s *SocketCAN) Recv() (*canio.Frame, error) {
 	// canid
 	_ = binary.Read(r, binary.LittleEndian, &m.Id)
 
-	if m.Id & unix.CAN_EFF_FLAG != 0 {
+	if m.Id&unix.CAN_EFF_FLAG != 0 {
 		m.Type = canio.EFF
 		m.Id &= unix.CAN_EFF_MASK
-	} else if m.Id & unix.CAN_ERR_FLAG != 0 {
+	} else if m.Id&unix.CAN_ERR_FLAG != 0 {
 		m.Type = canio.ERR
 		m.Id &= unix.CAN_ERR_MASK
-	} else if m.Id & unix.CAN_RTR_FLAG != 0 {
+	} else if m.Id&unix.CAN_RTR_FLAG != 0 {
 		m.Type = canio.RTR
 		// XXX not sure but probably use the EFF mask
 		m.Id &= unix.CAN_EFF_MASK
